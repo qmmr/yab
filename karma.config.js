@@ -5,8 +5,6 @@ webpackConfig.module.postLoaders = [{
   loader: 'istanbul-instrumenter'
 }];
 
-console.log('webpackConfig', webpackConfig.module.loaders);
-
 module.exports = function (config) {
   config.set({
     frameworks: [ 'mocha', 'chai' ],

@@ -1,9 +1,9 @@
 import React from 'react'
 import Menu from './components/Menu'
-// import styles from './css/App.css'
-// className={ styles.app }
+import styles from './css/App.css'
+
 const App = () => (
-  <div>
+  <div className={ styles.app }>
     <Menu />
     <h1>Hello, World!</h1>
   </div>
