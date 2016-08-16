@@ -9,7 +9,7 @@ module.exports = function (config) {
   config.set({
     frameworks: [ 'mocha', 'chai' ],
     files: [
-      // require('karma-webpack-with-fast-source-maps'),
+      // './node_modules/css-modules-require-hook/preset.js',
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
       './tests/test-bundler.js'
     ],
