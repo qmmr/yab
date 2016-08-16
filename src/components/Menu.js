@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from '../css/Menu.css'
 
+console.log('styles', styles);
+
 const Menu = () => (
 	<ul className={ styles.menu }>
 		<li><a href='#'>File</a></li>

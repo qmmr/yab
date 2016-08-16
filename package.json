@@ -8,6 +8,7 @@
     "build": "webpack --config webpack.config.production.js",
     "test": "karma start --single-run --no-auto-watch karma.config.js",
     "test:watch": "karma start --auto-watch --no-single-run karma.config.js",
+    "test:mocha": "NODE_ENV=test mocha ./tests/**/*.test.js --opts ./tests/mocha.opts",
     "lint": "eslint ./src"
   },
   "repository": {
@@ -55,6 +56,7 @@
     "eslint-plugin-jsx-a11y": "2.1.0",
     "eslint-plugin-react": "6.1.1",
     "istanbul-instrumenter-loader": "^0.2.0",
+    "jsdom": "9.4.2",
     "json-loader": "0.5.4",
     "karma": "1.2.0",
     "karma-chai": "0.1.0",
