@@ -1,7 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
 
+const BASE_CSS_LOADER = 'css?sourceMap'
 const CSS_MODULES_LOADER = [
+    BASE_CSS_LOADER,
     'modules',
     'importLoaders=1',
     'localIdentName=[name]__[local]___[hash:base64:5]'
@@ -12,20 +14,22 @@ module.exports = {
         extensions: [ '', '.js', '.css' ],
     },
     devtool: 'inline-source-map',
+    resolveLoader: {
+        root: path.resolve(__dirname, '.')
+    },
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel',
-                query: {
-                    cacheDirectory: true,
-                    presets: [ 'es2015', 'react', 'stage-2' ],
-                }
             },
             {
                 test: /\.css$/,
-                loader: `css?${ CSS_MODULES_LOADER }`,
+                loaders: [
+                    'css-module',
+                    CSS_MODULES_LOADER
+                ],
                 include: path.join(__dirname, 'src/css'),
             },
             { test: /\.json$/, loader: 'json' },

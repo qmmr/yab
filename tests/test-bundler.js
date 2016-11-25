@@ -3,11 +3,13 @@
 // ---------------------------------------
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 // import 'css-modules-require-hook/preset'; // Fix css-modules not rendering in tests
 
 global.React = React;
+global.ReactDOM = ReactDOM;
 global.expect = expect;
 global.shallow = shallow;
 global.mount = mount;
